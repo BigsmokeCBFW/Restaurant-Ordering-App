@@ -1,9 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                     <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
        <link rel="stylesheet" href="index.css">
+       <title>Ordering App</title>
     </head>
     <body>
-	<script src="index.js"></script>
+        <header>
+            <h1>Omeiza's Diner</h1>
+            <h2>The best burgers and pizzas in town.</h2>
+        </header>
+
+        <main>
+            <div class="menu-container" id="menu-container">
+                <div class="menu">
+                    <h3 class="emoji">🍕</h3>
+                    <span class="menu-detail">
+                        <h4 class="menu-title">Pizza</h4>
+                        <h4 class="menu-ingredient">peperoni,mushroom,mozarella</h4>
+                        <h4 class="menu-price">$14</h4>
+                    </span>
+                    <button class="add-menu">+</button>
+                </div>
+            </div>
+        </main>
+	<script src="index.js" type="module"></script>
     </body>
 </html>
 
