@@ -13,7 +13,8 @@ body {
 }
 header,
 main,
-.menu-container{
+.menu-container
+{
     width: 95%;
     margin: 0 auto;
 }
@@ -28,9 +29,17 @@ header{
     padding: 2.875rem;
 }
 
+
+/* ------------------------------------------------------------------
+                        Typography
+---------------------------------------------------------------------*/
+
 h1,
-h2{
+h2,
+.emoji,
+h5{
     margin: 0;
+    padding: 0;
 }
 
 h1{
@@ -41,25 +50,9 @@ h2{
     font-size: 1.375rem;
 }
 
-
-.menu-container{
-    display: grid;
-    gap: 20px;
-
-}
-
-.menu{
-    width: 83%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #D2D2D2;
-}
-
 .emoji{
     font-size: 4.92rem;
     opacity: 0.7;
-    margin: 0;
     margin-right: 0.5em;
 }
 
@@ -76,6 +69,47 @@ h2{
     margin-top: 0.5em;
 }
 
+.tab-title,
+.item-name,
+.tab-total-txt
+{
+    font-size: 1.75rem;
+    color: #0E0E0E;
+}
+
+.tab-title{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.remove{
+    font-size: 0.75rem;
+    color: #bbbbbb;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+/*              LAYOUT                             */
+.tab-container,
+.menu-container{
+    display: grid;
+    gap: 20px;
+
+}
+
+.tab-container,
+.menu{
+    width: 83%;
+    margin: 0 auto;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #D2D2D2;
+}
+
+
 .add-menu{
     border-radius: 50%;
     margin-left: auto;
@@ -86,6 +120,36 @@ h2{
     border: 2px solid #3C3C3C;
 }
 
+/* TAB SECTION */
+.tab-item,
+.tab-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-item{
+    margin-bottom: 1.25rem;
+}
+
+.tab-list{
+    border-bottom: 3px solid #393333;
+}
+
+.purchase-btn{
+    border-radius: 3px;
+    border: none;
+    color: #ffffff;
+    padding: 1.5em 0;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #16DB99;
+    margin-bottom: 2em;
+
+}
+
+
 /* --------------------  MEDIA QUERY  ---------------------------- */
 @media (min-width: 580px) {
     html{
@@ -93,8 +157,8 @@ h2{
     }
 
     header,
-    main,
-    .menu-container{
+    main
+  {
         width: 600px;
     }
 
