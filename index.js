@@ -5,13 +5,13 @@ const menuEl = document.getElementById('menu-container')
 const listContainer = document.getElementById('tab-list')
 const tabSection = document.getElementById('tab-section')
 
-const tabArray = []
+let tabArray = []
 
 document.addEventListener('click', (e) => {
   if(e.target.id){
     addToTab(Number(e.target.id))
   }else if(e.target.dataset.remove){
-    console.log(e.target.dataset.remove)
+    removeFromTab(e.target.dataset.remove)
   }
 })
 
@@ -46,6 +46,11 @@ function addToTab(foodId){
               price: foodObj.price,
               uuid: uuidv4()})
   renderTab()
+}
+
+function removeFromTab(tabId){
+    tabArray = tabArray.filter((tab) => tab.uuid !== tabId)
+    renderTab()
 }
 
 function renderTab(){
