@@ -4,16 +4,45 @@ import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid@8.3.2';
 const menuEl = document.getElementById('menu-container')
 const listContainer = document.getElementById('tab-list')
 const tabSection = document.getElementById('tab-section')
+const paymentForm = document.getElementById('payment-form')
+const orderConfirmation = document.getElementById('order-confirmation')
 
 let tabArray = []
 
+render()
+
 document.addEventListener('click', (e) => {
   if(e.target.id){
-    addToTab(Number(e.target.id))
+    if(e.target.id === 'check-out'){
+      document.getElementById('payment-modal').style.display = 'block'
+      tabArray.length = 0
+      render()
+    }else if( e.target.id >= 0 && e.target.id <= 2){
+      addToTab(Number(e.target.id))
+    }
   }else if(e.target.dataset.remove){
     removeFromTab(e.target.dataset.remove)
   }
 })
+
+document.addEventListener('submit', (e) => {
+  handleSubmit(e)
+})
+
+function handleSubmit(event){
+  event.preventDefault()
+  const paymentData = new FormData(paymentForm)
+  const fulName = paymentData.get('name')
+  paymentForm.reset()
+
+  orderConfirmation.style.display = "flex"
+  orderConfirmation.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+  document.getElementById('name').textContent = fulName
+  document.getElementById('payment-modal').style.display = 'none'
+}
 
 function render() {
   menuEl.innerHTML = menuArray.map((menu) =>{
@@ -31,10 +60,20 @@ function render() {
     `
   } ).join("")
 
-    tabSection.style.display = (tabArray.length > 0)?'block' : 'none'
+    if(tabArray.length > 0){
+      tabSection.style.display = 'block'
+      tabSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }else{
+      tabSection.style.display = 'none'
+    }
+
+    orderConfirmation.style.display = "none"
 }
 
-render()
+
 
 
 

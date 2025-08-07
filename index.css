@@ -37,7 +37,8 @@ header{
 h1,
 h2,
 .emoji,
-h5{
+h5,
+.card-detail-title{
     margin: 0;
     padding: 0;
 }
@@ -56,6 +57,11 @@ h2{
     margin-right: 0.5em;
 }
 
+.card-detail-title{
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 1.5rem 0;
+}
 
 .menu-title{
     font-size: 1.75rem;
@@ -83,10 +89,18 @@ h2{
 }
 
 .remove{
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #bbbbbb;
     margin-left: 1em;
     cursor: pointer;
+}
+
+input{
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.5em 1em;
+    margin-bottom: 1.5em;
 }
 
 /*              LAYOUT                             */
@@ -98,7 +112,8 @@ h2{
 }
 
 .tab-container,
-.menu{
+.menu
+{
     width: 83%;
     margin: 0 auto;
 }
@@ -109,6 +124,21 @@ h2{
     border-bottom: 2px solid #D2D2D2;
 }
 
+.payment-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 78.85%;
+    height: fit-content;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 0px 20px 6px #666;
+    display: none;
+}
 
 .add-menu{
     border-radius: 50%;
@@ -139,7 +169,8 @@ h2{
     border-bottom: 0.1875rem solid #393333;
 }
 
-.purchase-btn{
+.purchase-btn,
+.payment-btn{
     border-radius: 3px;
     border: none;
     color: #ffffff;
@@ -153,6 +184,23 @@ h2{
 }
 
 
+.payment-btn{
+    width: 100%;
+}
+
+.order-confirmation{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 78.85%;
+    height: 7.5rem;
+    margin: 2rem auto;
+    background-color: #ECFDF5;
+    font-size: 1.5rem;
+    color: #065F46
+}
+
+
 /* --------------------  MEDIA QUERY  ---------------------------- */
 @media (min-width: 580px) {
     html{
@@ -161,11 +209,19 @@ h2{
 
     header,
     main
-  {
+    {
         width: 600px;
     }
 
     header{
         height: 167px;
+    }
+
+    .remove{
+        font-size: 0.75rem;
+    }
+
+    .payment-modal{
+        width: 498px;
     }
 }
