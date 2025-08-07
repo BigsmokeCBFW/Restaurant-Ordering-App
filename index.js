@@ -2,7 +2,9 @@ import { menuArray } from "./data.js";
 import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid@8.3.2';
 
 const menuEl = document.getElementById('menu-container')
-const tabContainer = document.getElementById('tab-container')
+const listContainer = document.getElementById('tab-list')
+const tabSection = document.getElementById('tab-section')
+
 const tabArray = []
 
 function render() {
@@ -20,6 +22,9 @@ function render() {
                 </div>
     `
   } ).join("")
+  if(tabArray.length > 0){
+    tabSection.style.display = 'block'
+  }
 }
 
 render()
@@ -39,17 +44,18 @@ function addToTab(foodId){
   tabArray.push({name: foodObj.name,
               price: foodObj.price,
               uuid: uuidv4()})
-
-  console.log(tabArray)
+  renderTab()
 }
 
 function renderTab(){
-  tabContainer.innerHTML = tabArray.map( tab =>{
-    return`
-    
+  listContainer.innerHTML = tabArray.map( tab =>{
+    return`<div class="tab-item">
+                  <h5 class="item-name">${tab.name} <span class="remove" data-remove="${tab.uuid}">remove</span></h5>
+                  <h5>$${tab.price}</h5>
+              </div>
     `
-  }
+  }).join("")
 
-  )
+  render()
 }
 

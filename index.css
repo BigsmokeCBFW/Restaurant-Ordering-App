@@ -121,6 +121,9 @@ h2{
 }
 
 /* TAB SECTION */
+.tab-section{
+    display: none;
+}
 .tab-item,
 .tab-total{
     display: flex;
