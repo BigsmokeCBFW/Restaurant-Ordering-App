@@ -197,7 +197,8 @@ input{
     margin: 2rem auto;
     background-color: #ECFDF5;
     font-size: 1.5rem;
-    color: #065F46
+    color: #065F46;
+    padding: 1em;
 }
 
 
