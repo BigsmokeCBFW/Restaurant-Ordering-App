@@ -11,7 +11,7 @@ body {
 header,
 main,
 .menu-container{
-    width: 600px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -79,4 +79,13 @@ h2{
     font-size: 2rem;
     background-color: #DEDEDE;
     border: 2px solid #3C3C3C;
+}
+
+/* --------------------  MEDIA QUERY  ---------------------------- */
+@media (min-width: 580px) {
+    header,
+    main,
+    .menu-container{
+        width: 600px;
+    }
 }
