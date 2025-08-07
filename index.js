@@ -10,7 +10,7 @@ function render() {
                     <h3 class="emoji">${emoji}</h3>
                     <span class="menu-detail">
                         <h4 class="menu-title">${name}</h4>
-                        <h4 class="menu-ingredient">${ingredients}</h4>
+                        <p class="menu-ingredient">${ingredients}</p>
                         <h4 class="menu-price">$${price}</h4>
                     </span>
                     <button class="add-menu">+</button>

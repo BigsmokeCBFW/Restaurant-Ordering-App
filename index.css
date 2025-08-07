@@ -11,7 +11,6 @@ body {
     padding: 0;
     font-weight: 400;
 }
-
 header,
 main,
 .menu-container{
@@ -20,7 +19,8 @@ main,
 }
 
 header{
-    height: 167px;
+    width: 100%;
+    height: 100px;
     background-image: url('images/banner.jpg');
     background-size: cover;
     background-position: center;
@@ -43,16 +43,16 @@ h2{
 
 
 .menu-container{
-    width: 83%;
     display: grid;
     gap: 20px;
 
 }
 
 .menu{
+    width: 83%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 3rem;
     border-bottom: 2px solid #D2D2D2;
 }
 
@@ -60,6 +60,7 @@ h2{
     font-size: 4.92rem;
     opacity: 0.7;
     margin: 0;
+    margin-right: 0.5em;
 }
 
 
@@ -95,5 +96,9 @@ h2{
     main,
     .menu-container{
         width: 600px;
+    }
+
+    header{
+        height: 167px;
     }
 }
