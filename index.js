@@ -7,6 +7,14 @@ const tabSection = document.getElementById('tab-section')
 
 const tabArray = []
 
+document.addEventListener('click', (e) => {
+  if(e.target.id){
+    addToTab(Number(e.target.id))
+  }else if(e.target.dataset.remove){
+    console.log(e.target.dataset.remove)
+  }
+})
+
 function render() {
   menuEl.innerHTML = menuArray.map((menu) =>{
     const {name, ingredients, price, emoji, id } = menu
@@ -22,20 +30,13 @@ function render() {
                 </div>
     `
   } ).join("")
-  if(tabArray.length > 0){
-    tabSection.style.display = 'block'
-  }
+
+    tabSection.style.display = (tabArray.length > 0)?'block' : 'none'
 }
 
 render()
 
-document.addEventListener('click', (e) => {
-  if(e.target.id){
-    addToTab(Number(e.target.id))
-  }else if(e.target.dataset.remove){
-    console.log(e.target.dataset.remove)
-  }
-})
+
 
 function addToTab(foodId){
 
@@ -56,6 +57,12 @@ function renderTab(){
     `
   }).join("")
 
+  const totalPrice = tabArray.reduce((total, nextItem) => {
+    return total + nextItem.price
+  }, 0)
+
+  document.getElementById('total-price').textContent = `$${totalPrice}`
   render()
 }
+
 
